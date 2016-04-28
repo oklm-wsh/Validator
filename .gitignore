@@ -13,6 +13,5 @@ _build/
 setup.data
 setup.log
 doc/*.html
-*.docdir
 *.tar.gz
 _tests/
