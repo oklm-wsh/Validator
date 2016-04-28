@@ -1,0 +1,32 @@
+opam-version: "1.2"
+name:         "validator"
+version:      "dev"
+maintainer:   "Romain Calascibetta <romain.calascibetta@gmail.com>"
+authors:      "Romain Calascibetta <romain.calascibetta@gmail.com>"
+homepage:     "https://github.com/oklm-wsh/Validator"
+bug-reports:  "https://github.com/oklm-wsh/Validator/issues"
+dev-repo:     "https://github.com/oklm-wsh/Validator.git"
+license:      "MIT"
+
+build: [
+  ["./configure"
+    "--prefix=%{prefix}%"]
+  [make]
+]
+
+install: [make "install"]
+remove: ["ocamlfind" "remove" "mrmime"]
+
+depends: [
+  "oasis"             {build}
+  "js_of_ocaml"
+  "tyxml"
+  "react"
+  "reactiveData"
+  "ocplib-json-typed"
+  "ezjsonm"
+  "yojson"
+  "mrmime"
+]
+
+available: [ocaml-version >= "4.02.0"]

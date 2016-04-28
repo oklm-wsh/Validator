@@ -1,0 +1,5 @@
+S lib/
+
+B _build/lib/
+
+PKG mrmime ipaddr tyxml js_of_ocaml js_of_ocaml.ppx react reactiveData ocplib-json-typed ezjsonm ocamlbuild yojson
