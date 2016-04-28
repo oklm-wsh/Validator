@@ -96,7 +96,7 @@ let get coerce id =
     (Dom_html.getElementById id |> coerce)
     (fun () -> assert false)
 
-type mode = [ `None | `Error of exn | `Valid of Address.t ]
+type mode = [ `None | `Error of exn | `Valid of Address.List.t ]
 
 let current, set = React.S.create (`None : [> mode])
 let (>|~=) x f = React.S.map f x
@@ -109,7 +109,7 @@ let ok =
   in
   let _ = current >|~= function
     | `Valid m ->
-      let json = Ezjsonm.to_string @@ Ezjsonm.wrap @@ Json_encoding.construct e m in
+      let json = Ezjsonm.to_string @@ Ezjsonm.wrap @@ Json_encoding.(construct (list e) m) in
       ReactiveData.RList.set sok
         [ M.pre [ M.code ~a:[M.a_class ["json"]] [ M.pcdata (Yojson.Safe.prettify json) ] ] ]
     | `Error _ | `None -> ReactiveData.RList.set sok []
@@ -139,7 +139,7 @@ let term   = get Dom_html.CoerceTo.input "validate-term"
 
 let main () =
   let data = term##.value |> Js.to_string in
-  try let m = Address.of_string ~relax:false data in
+  try let m = Address.List.of_string ~relax:false data in
       set (`Valid m)
   with exn -> set (`Error exn)
 
