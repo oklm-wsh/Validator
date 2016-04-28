@@ -15,7 +15,7 @@ build: [
 ]
 
 install: [make "install"]
-remove: ["ocamlfind" "remove" "mrmime"]
+remove: ["ocamlfind" "remove" "validator"]
 
 depends: [
   "oasis"             {build}
