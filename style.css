@@ -1,41 +1,154 @@
-.keyword { font-weight : bold ; color : Red }
-.keywordsign { color : #C04600 }
-.superscript { font-size : 4 }
-.subscript { font-size : 4 }
-.comment { color : Green }
-.constructor { color : Blue }
-.type { color : #5C6585 }
-.string { color : Maroon }
-.warning { color : Red ; font-weight : bold }
-.info { margin-left : 3em; margin-right: 3em }
-.param_info { margin-top: 4px; margin-left : 3em; margin-right : 3em }
-.code { color : #465F91 ; }
-.typetable { border-style : hidden }
-.paramstable { border-style : hidden ; padding: 5pt 5pt}
-tr { background-color : White }
-td.typefieldcomment { background-color : #FFFFFF ; font-size: smaller ;}
-div.sig_block {margin-left: 2em}
-*:target { background: yellow; }
-body {font: 13px sans-serif; color: black; text-align: left; padding: 5px; margin: 0}
-h1 { font-size : 20pt ; text-align: center; }
-h2 { font-size : 20pt ; border: 1px solid #000000; margin-top: 5px; margin-bottom: 2px;text-align: center; background-color: #90BDFF ;padding: 2px; }
-h3 { font-size : 20pt ; border: 1px solid #000000; margin-top: 5px; margin-bottom: 2px;text-align: center; background-color: #90DDFF ;padding: 2px; }
-h4 { font-size : 20pt ; border: 1px solid #000000; margin-top: 5px; margin-bottom: 2px;text-align: center; background-color: #90EDFF ;padding: 2px; }
-h5 { font-size : 20pt ; border: 1px solid #000000; margin-top: 5px; margin-bottom: 2px;text-align: center; background-color: #90FDFF ;padding: 2px; }
-h6 { font-size : 20pt ; border: 1px solid #000000; margin-top: 5px; margin-bottom: 2px;text-align: center; background-color: #90BDFF ; padding: 2px; }
-div.h7 { font-size : 20pt ; border: 1px solid #000000; margin-top: 5px; margin-bottom: 2px;text-align: center; background-color: #E0FFFF ; padding: 2px; }
-div.h8 { font-size : 20pt ; border: 1px solid #000000; margin-top: 5px; margin-bottom: 2px;text-align: center; background-color: #F0FFFF ; padding: 2px; }
-div.h9 { font-size : 20pt ; border: 1px solid #000000; margin-top: 5px; margin-bottom: 2px;text-align: center; background-color: #FFFFFF ; padding: 2px; }
-a {color: #416DFF; text-decoration: none}
-a:hover {background-color: #ddd; text-decoration: underline}
-pre { margin-bottom: 4px; font-family: monospace; }
-pre.verbatim, pre.codepre { }
-.indextable {border: 1px #ddd solid; border-collapse: collapse}
-.indextable td, .indextable th {border: 1px #ddd solid; min-width: 80px}
-.indextable td.module {background-color: #eee ;  padding-left: 2px; padding-right: 2px}
-.indextable td.module a {color: 4E6272; text-decoration: none; display: block; width: 100%}
-.indextable td.module a:hover {text-decoration: underline; background-color: transparent}
-.deprecated {color: #888; font-style: italic}
-.indextable tr td div.info { margin-left: 2px; margin-right: 2px }
-ul.indexlist { margin-left: 0; padding-left: 0;}
-ul.indexlist li { list-style-type: none ; margin-left: 0; padding-left: 0; }
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
+
+* {
+  margin:  0;
+  padding: 0;
+}
+
+body { background-color: #46a4ff; }
+
+/*
+#ff6b6b
+#a3d46e
+#eaca75
+#435e87
+#cf8243
+#789ec6
+#ababab
+#555753
+#ff8d8d
+#c8e7a8
+#ffd155
+#587aa4
+#f6a24f
+#46a4ff
+#cdb844
+*/
+
+.field {
+  display: flex;
+  position: relative;
+  margin: 5em auto;
+  width: 70%;
+  flex-direction: row;
+  font: 1.6em 'Montserrat Alternates';
+  box-shadow:
+    1px 1px 0 rgb(207, 130, 67),
+    2px 2px 0 rgb(207, 130, 67),
+    3px 3px 0 rgb(207, 130, 67),
+    4px 4px 0 rgb(207, 130, 67),
+    5px 5px 0 rgb(207, 130, 67),
+    6px 6px 0 rgb(207, 130, 67),
+    7px 7px 0 rgb(207, 130, 67)
+    ;
+}
+
+.field > input[type="text"],
+.field > input[type="submit"]
+{
+  font: inherit;
+  display: block;
+}
+
+.field > input[type="text"] {
+  flex: 1;
+  padding: 0.6em;
+  border: 0.2em solid rgb(246, 162, 79);
+}
+
+.field > input[type="submit"] {
+  padding: 0.6em 0.8em;
+  background-color: rgb(246, 162, 79);
+  border: none;
+  color: #FFFFFF;
+}
+
+.error {
+  display: flex;
+  position: relative;
+  margin: auto;
+  margin-bottom: 5em;
+  width: 70%;
+  flex-direction: row;
+  font: 1.2em 'Montserrat Alternates';
+  box-shadow:
+    1px 1px 0 rgb(255, 107, 107),
+    2px 2px 0 rgb(255, 107, 107),
+    3px 3px 0 rgb(255, 107, 107),
+    4px 4px 0 rgb(255, 107, 107),
+    5px 5px 0 rgb(255, 107, 107),
+    6px 6px 0 rgb(255, 107, 107),
+    7px 7px 0 rgb(255, 107, 107)
+    ;
+  background-color: #ff8d8d;
+  color: #FFFFFF;
+  padding: 0.6em;
+}
+
+.ok {
+  display: flex;
+  position: relative;
+  margin: auto;
+  margin-bottom: 5em;
+  width: 70%;
+  flex-direction: row;
+  box-shadow:
+    1px 1px 0 rgb(34, 34, 34),
+    2px 2px 0 rgb(34, 34, 34),
+    3px 3px 0 rgb(34, 34, 34),
+    4px 4px 0 rgb(34, 34, 34),
+    5px 5px 0 rgb(34, 34, 34),
+    6px 6px 0 rgb(34, 34, 34),
+    7px 7px 0 rgb(34, 34, 34)
+    ;
+  background-color: #474949;
+}
+
+.hidden {
+  display: none;
+}
+
+.example {
+  display: flex;
+  position: relative;
+  margin: auto;
+  width: 70%;
+  flex-direction: row;
+  box-shadow:
+    1px 1px 0 rgb(34, 34, 34),
+    2px 2px 0 rgb(34, 34, 34),
+    3px 3px 0 rgb(34, 34, 34),
+    4px 4px 0 rgb(34, 34, 34),
+    5px 5px 0 rgb(34, 34, 34),
+    6px 6px 0 rgb(34, 34, 34),
+    7px 7px 0 rgb(34, 34, 34)
+    ;
+  background-color: #CC8464;
+}
+
+.example { margin-bottom: 5em; }
+.example ul { width: 100%; list-style: none; }
+.example ul li { clear: both; display: flex; }
+.mail { flex: 1; }
+
+.example ul li .mail pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.result {
+  width: 100px;
+  text-align: center;
+  vertical-align: center;
+  display: inline-block;
+}
+
+.result.valid {
+  background-color: #72901F;
+  color: #ffffff;
+}
+
+.result.invalid {
+  background-color: #ff6b6b;
+  color: #ffffff;
+}
