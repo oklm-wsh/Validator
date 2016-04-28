@@ -26,6 +26,7 @@ depends: [
   "ocplib-json-typed"
   "ezjsonm"
   "yojson"
+  "cstruct"
   "mrmime"
 ]
 
