@@ -128,16 +128,13 @@ body { background-color: #46a4ff; }
 
 .example { margin-bottom: 5em; }
 .example ul { width: 100%; list-style: none; }
-.example ul li { clear: both; }
+.example ul li { clear: both; display: flex; }
+.mail { flex: 1; }
 
 .example ul li .mail pre {
   word-wrap: break-word;
   white-space: pre-wrap;
 }
-
-.example ul li { display: flex; }
-
-.mail { flex: 1; }
 
 .result {
   width: 100px;
