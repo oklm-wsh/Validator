@@ -37,5 +37,6 @@ Document "validator"
   Title:                "Validator"
   XOCamlBuildPath:      .
   XOCamlBuildModules:   Nothing
-  PostCommand:          jsoo_minify '_build/web/validator.js' -o 'web/validator.js' && \
-                        $to_html -s 'web/validator.js' > 'validator.html'
+  PostCommand:          jsoo_minify '_build/web/validator.js' -o 'validator.docdir/validator.js' && \
+                        $to_html -s 'validator.js' > 'validator.docdir/validator.html' && \
+                        cp 'web/style.css' 'validator.docdir/style.css'

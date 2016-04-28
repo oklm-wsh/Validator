@@ -371,7 +371,7 @@ let script = function
        [ M.meta ~a:[ M.a_http_equiv "content-type"
                    ; M.a_content "text/html; charset=utf-8"] ()
        ; M.link ~rel:[`Stylesheet]
-                ~href:(Xml.uri_of_string "web/style.css")
+                ~href:(Xml.uri_of_string "style.css")
                 ~a:[M.a_mime_type "text/css"] ()
        ; M.script ~a:[ M.a_src @@ Xml.uri_of_string highligh_js ] @@ M.pcdata ""
        ; M.link ~rel:[`Stylesheet]
